@@ -1,0 +1,9 @@
+{
+  "name": "zinc",
+  "version": "0.0.1",
+  "description": "Zinc.",
+  "private": true,
+  "dependencies": {
+    "d3": "~3.5.2"
+  }
+}
