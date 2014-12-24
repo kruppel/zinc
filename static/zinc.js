@@ -8,7 +8,10 @@
   }
 
   Sink.prototype.onMessage = function(event) {
-    console.log(event);
+    var data = JSON.parse(event.data);
+    data.created_at = new Date(data.created_at);
+    data.converted_at = new Date(data.converted_at);
+    console.log(data);
   };
 
   function Graph(options) {
