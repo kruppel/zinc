@@ -7,7 +7,6 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
-	"strconv"
 	"time"
 )
 
@@ -60,7 +59,13 @@ var msgBroker *Broker
 func mockMessage() {
 	for {
 		time.Sleep(1000 * time.Millisecond)
-		msgBroker.Publish([]byte(strconv.Itoa(rand.Intn(100))))
+		secs := rand.Intn(100) + 2000
+		ctime := time.Now().Add(time.Duration(secs) * time.Second * -1)
+		mtime := time.Now()
+		res := Response{}
+		res["created_at"] = ctime.String()
+		res["converted_at"] = mtime.String()
+		msgBroker.Publish([]byte(res.String()))
 	}
 }
 
@@ -108,7 +113,7 @@ func timerEventSource(w http.ResponseWriter, r *http.Request) {
 
 	for {
 		msg := <-ch
-		fmt.Fprintf(w, "data: Message: %s\n\n", msg)
+		fmt.Fprintf(w, "data: %s\n\n", msg)
 		f.Flush()
 	}
 }
