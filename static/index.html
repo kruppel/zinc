@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Zinc</title>
-    <link rel="stylesheet" href="/zinc.css">
+    <link rel="stylesheet" href="zinc.css">
     <style>
       body {
         font: 10px sans-serif;
@@ -27,7 +27,13 @@
     </style>
   </head>
   <body>
+    <script>
+      module = {
+        exports: window
+      };
+    </script>
     <script src="vendor/d3/d3.js"></script>
+    <script src="vendor/emitter/index.js"></script>
     <script src="zinc.js"></script>
     <script>
       var DATA = [
