@@ -60,8 +60,8 @@
     var path = svg.append("g").attr("clip-path", "url(#clip)").append("path").datum(_data).attr("class", "area").attr("d", line);
   };
 
-  Graph.prototype.onMessage = function() {
-    console.log(arguments);
+  Graph.prototype.onMessage = function(message) {
+    console.log(message);
   };
 
   exports.Zinc = {
