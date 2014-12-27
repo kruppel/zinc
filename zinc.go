@@ -59,7 +59,7 @@ var msgBroker *Broker
 func mockMessage() {
 	for {
 		time.Sleep(1000 * time.Millisecond)
-		secs := rand.Intn(100) + 2000
+		secs := rand.Intn(1000)
 		ctime := time.Now().Add(time.Duration(secs) * time.Second * -1)
 		mtime := time.Now()
 		res := Response{}
