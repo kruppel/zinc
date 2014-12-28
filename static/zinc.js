@@ -3,8 +3,7 @@
 (function(exports) {
   var DAY_IN_MS = 1000 * 60 * 60 * 24,
       HOUR_IN_MS = 1000 * 60 * 60,
-      MINUTE_IN_MS = 1000 * 60,
-      FIVE_MINUTES_IN_MS = 1000 * 60 * 5;
+      MINUTE_IN_MS = 1000 * 60;
 
   function Sink(url) {
     var source = new EventSource(url);
