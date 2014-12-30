@@ -50,6 +50,8 @@
           },
 
           parse: function(json) {
+            if (!json) return [];
+
             return json.map(function(item) {
               var converted = new Date(item.converted_at),
                   created = new Date(item.created_at);

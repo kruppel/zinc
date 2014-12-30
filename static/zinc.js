@@ -42,7 +42,7 @@
     var x = this._x = d3.time.scale.utc();
     var y = this._y = d3.scale.linear().domain([0, 4000000]).range([height, 0]);
 
-    x.domain([new Date(data[0].created_at), new Date(data[data.length - 1].created_at)]).range([0, width]);
+    x.range([0, width]);
 
     var svg = this._svg = d3.select("body").append("svg").attr({
       width: width + margin.left + margin.right,
